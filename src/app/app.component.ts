@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.change();
-      this.cd.markForCheck();
+      this.cd.markForCheck(); // needed because of OnPush
     }, 1000);
   }
 
