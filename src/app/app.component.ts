@@ -20,9 +20,9 @@ export class AppComponent implements OnInit {
   constructor(private cd: ChangeDetectorRef) {}
 
   ngOnInit() {
-    setTimeout(() => {
+    setInterval(() => {
       this.change();
-      this.cd.markForCheck(); // needed because of OnPush
+      this.cd.markForCheck(); // needed detectChanges() or markForCheck()because of OnPush
     }, 1000);
   }
 
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   }
 
   change() {
-    this.ar[2] = 7;
+    this.ar[2] = this.ar[2] +1;
     console.log(this.ar);
   }
 }
